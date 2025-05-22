@@ -15,15 +15,25 @@ java {
 
 repositories {
 	mavenCentral()
-	maven { url 'https://repo.spring.io/snapshot' }
+	maven { url = 'https://repo.spring.io/snapshot' }
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.boot:spring-boot-starter-webflux'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+test {
+	testLogging {
+		events  "passed", "failed", "skipped"
+		showStandardStreams = true 
+	}
 }
