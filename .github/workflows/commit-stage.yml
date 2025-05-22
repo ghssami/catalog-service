@@ -26,7 +26,7 @@ jobs:
         severity-cutoff: high
         acs-report-enable: true
         format: sarif
-        output-file: results.sarif
+        output-file: result.sarif
     - name: Upload wulnerability report
       uses: github/codeql-action/upload-sarif@v3
       if: success() || failure()
