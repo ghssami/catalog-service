@@ -2,7 +2,6 @@ package com.polarbookshop.catalogservice.domain;
 
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import org.junit.jupiter.api.BeforeAll;
